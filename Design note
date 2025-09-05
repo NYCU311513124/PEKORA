@@ -30,7 +30,7 @@ Computation Controls
 • Resampling method (multinomial / residual / systematic / stratified)
 
 Core Functions
-• initialize1, initialize2 : Initialize frequency points, target impedance, and phase specifications.
+• initialize1, initialize2 : Initialize frequency points, target impedance, and phase specifications, circuit parameters, and output results.
 • PEKO1, PEKO2 : Core calculation functions. Based on the selected circuit structure (CRLH or impedance matching), compute the reflection coefficient and phase shift for each particle (parameter set).
 • nonresampling1, nonresampling2 : Update particle states without resampling.
 • resampling1, resampling2 : Perform particle resampling based on particle weights. Supports multiple resampling strategies.
