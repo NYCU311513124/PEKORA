@@ -3,7 +3,7 @@ This program implements the Partially Estimated Kernel Optimization (PEKO) algor
 
 ## Core Algorithm Overview
 1. PEKO Algorithm (Partially Estimated Kernel Optimization) : The goal of this algorithm is to transform the load impedance in a circuit into the desired input impedance, thereby achieving impedance matching.
-2. Particle Filter : To overcome the computational complexity of traditional grid search methods, this program adopts the particle filter approach. It uses a finite number of randomly sampled points (particles) to estimate results, and by repeatedly resampling and updating particle weights, it efficiently identifies the optimal set of design parameters.
+2. Particle Filter : To overcome the computational complexity of grid search method, this program adopts the particle filter approach. It uses a finite number of randomly sampled points (particles) to estimate results, and by repeatedly resampling and updating particle weights, it efficiently identifies the optimal set of design parameters.
 
 ## Supported Circuit Structures
 This MATLAB implementation of the PEKORA algorithm can be used to design:
