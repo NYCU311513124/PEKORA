@@ -17,7 +17,6 @@ The program allows tuning of multiple parameters to control the calculation proc
 1. Basic Specifications : Frequency range, input and load impedances, target reflection coefficient, and center frequency.
 2. Structural Parameters : Characteristic impedance and electrical length ranges of transmission lines and stubs.
 3. Computation Controls : Circuit order, number of particles, number of recalculations, particle distribution type (uniform or normal), and resampling method.
-
 Based on these parameters, the program performs iterative calculations using the particle filter and outputs the optimized structural parameters that satisfy the design objectives.
 
 ## Usage
