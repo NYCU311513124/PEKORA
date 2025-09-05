@@ -6,14 +6,14 @@ This program implements the Partially Estimated Kernel Optimization (PEKO) algor
 2. Particle Filter : To overcome the computational complexity of grid search method, this program adopts the particle filter approach. It uses a finite number of randomly sampled points (particles) to estimate results, and by repeatedly resampling and updating particle weights, it efficiently identifies the optimal set of design parameters.
 
 ## Supported Circuit Structures
-This MATLAB implementation of the PEKORA algorithm can be used to design:
+This MATLAB implementation of the PEKORA algorithm can be used to design :
 1. CRLH Phase Shifter : Achieves reflection coefficient requirements and satisfies specific phase variation conditions.
 2. Impedance Matching Structure : Achieves the specified reflection coefficient requirements.
 3. Switchable Mode : Can switch between impedance matching structure and CRLH phase shifter.
 4. Result Prioritization : The program ranks results according to user-defined priorities (reflection coefficient, phase variation, or a weighted combination of both).
 
 ## Adjustable Parameters
-The program allows tuning of multiple parameters to control the calculation process:
+The program allows tuning of multiple parameters to control the calculation process :
 1. Basic Specifications : Frequency range, input and load impedances, target reflection coefficient, and center frequency.
 2. Structural Parameters : Characteristic impedance and electrical length ranges of transmission lines and stubs.
 3. Computation Controls : Circuit order, number of particles, number of recalculations, particle distribution type (uniform or normal), and resampling method.
