@@ -36,7 +36,7 @@ Core Functions
 • resampling1, resampling2 : Perform particle resampling based on particle weights. Supports multiple resampling strategies.
 • hololive1, hololive2 : Introduce random perturbations to particles, simulating parameter variations.
 • KLD1, KLD2 : Execute KLD (Kullback-Leibler Divergence) sampling, dynamically adjusting the number of particles based on their distribution to ensure accuracy and efficiency.
-• out1, out2 : Sort and save the best optimization results
+• out1, out2 : Sort and save the best optimization results.
 
 Output
 • Optimized structural parameters (characteristic impedance, electrical length)
