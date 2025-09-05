@@ -61,43 +61,43 @@ This program is intended for research and academic use only.
 
 PEKORA algorithm
 START
-start timer
-Input : structural parameter analysis range and algorithm controls
-Output : optimal structural parameters and calculation results
-foreach calculation parameter and output result do
-initialization
-end
-for restart_index = 1 to num_restart do
-set num_particles = num_initial_particles
-generate random particles
-for iteration = 1 to num_iterations do
-foreach particle parameter do
-initialization
-end
-foreach particle do
-evaluate particle with PEKO algorithm
-store calculation result
-end
-if iteration < num_iterations then
-compute particle weights
-if resampling_enabled then
-resample particles based on weights
-else
-add random noise to particle parameters
-end
-if KLD_sampling_enabled then
-do
-compute bins across parameter ranges
-compute num_required_particle via KLD bound
-add new particles by noisy copies
-while num_particles < num_required_particle
-end
-end
-end
-foreach particle do
-sort calculation results
-store optimal structural parameters
-end
-end
-stop timer
+    start timer
+    Input : structural parameter analysis range and algorithm controls
+    Output : optimal structural parameters and calculation results
+    foreach calculation parameter and output result do
+        initialization
+    end
+    for restart_index = 1 to num_restart do
+        set num_particles = num_initial_particles
+        generate random particles
+        for iteration = 1 to num_iterations do
+            foreach particle parameter do
+                initialization
+            end
+            foreach particle do
+                evaluate particle with PEKO algorithm
+                store calculation result
+            end
+            if iteration < num_iterations then
+                compute particle weights
+                if resampling_enabled then
+                    resample particles based on weights
+                else
+                    add random noise to particle parameters
+                end
+                if KLD_sampling_enabled then
+                    do
+                        compute bins across parameter ranges
+                        compute num_required_particle via KLD bound
+                        add new particles by noisy copies
+                    while num_particles < num_required_particle
+                end
+            end
+        end
+        foreach particle do
+            sort calculation results
+            store optimal structural parameters
+        end
+    end
+    stop timer
 END
