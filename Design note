@@ -1,1 +1,103 @@
-pekopeko
+Program Function
+Partially Estimated Kernel Optimization and Random Adaptive (PEKORA) is an optimization tool based on the particle filter algorithm. It uses particle filtering to search for the optimal circuit parameter set for the design and analysis of microwave circuits. The code is mainly divided into several parts: basic specification settings, structural parameter settings, calculation control settings, and function definitions.
+The framework supports two main design applications:
+1. CRLH (Composite Right/Left-Handed) Phase Shifter Design : Optimizes transmission line and stub parameters to achieve a specific phase response with low reflection coefficients.
+2. Impedance Matching Network Design : Optimizes circuit parameters to achieve maximum power transfer and minimal reflection coefficient across a target frequency range.
+
+Algorithm Workflow (PEKO)
+The Partially Estimated Kernel Optimization (PEKO) algorithm follows these steps:
+1. Define design parameter ranges for transmission lines and stubs.
+2. Extract load impedance over the specified frequency range.
+3. Calculate input impedance and reflection coefficient using impedance transformation formulas.
+4. Identify the optimal circuit structure that satisfies impedance matching or phase-shift requirements.
+PEKO1: For CRLH phase shifters, computes ABCD parameters and checks both phase and impedance matching.
+PEKO2: For impedance matching structures, calculates reflection coefficients using the transmission line input impedance formula.
+
+Parameter Settings
+PEKORA allows flexible design by configuring parameters at the beginning of the code.
+Basic Specifications
+•	Frequency range
+•	Input and load impedances
+•	Target reflection coefficient
+•	Center frequency
+Structural Parameters
+•	Characteristic impedance range (transmission lines and stubs)
+•	Electrical length range
+Computation Controls
+•	Circuit order
+•	Number of particles and distribution type (uniform / normal distribution)
+•	Number of iterations
+•	Resampling method (multinomial / residual / systematic / stratified)
+
+Core Functions
+•	initialize1, initialize2 : Initialize frequency points, target impedance, and phase specifications.
+•	PEKO1, PEKO2 : Core calculation functions. Based on the selected circuit structure (CRLH or impedance matching), compute the reflection coefficient and phase shift for each particle (parameter set).
+•	nonresampling1, nonresampling2 : Update particle states without resampling.
+•	resampling1, resampling2 : Perform particle resampling based on particle weights. Supports multiple resampling strategies.
+•	hololive1, hololive2 : Introduce random perturbations to particles, simulating parameter variations.
+•	KLD1, KLD2 : Execute KLD (Kullback-Leibler Divergence) sampling, dynamically adjusting the number of particles based on their distribution to ensure accuracy and efficiency.
+•	out1, out2 : Sort and save the best optimization results
+
+Output
+•	Optimized structural parameters (characteristic impedance, electrical length)
+•	Reflection coefficient
+•	Phase response curve
+•	Impedance matching ratio
+
+Usage
+1.	Open PEKORA.m in MATLAB.
+2.	Modify the parameter settings at the beginning of the script.
+3.	Run the program. The particle filter algorithm will execute, and computation time will be displayed in the MATLAB command window.
+4.	Optimized structural parameters and corresponding results (reflection coefficient / phase response) will be output.
+
+System Requirements
+•	MATLAB
+•	(Optional) Simulated Exported S Parameters CSV file
+
+Notes
+This program is intended for research and academic use only.
+
+
+
+PEKORA algorithm
+START
+start timer
+Input : structural parameter analysis range and algorithm controls
+Output : optimal structural parameters and calculation results
+foreach calculation parameter and output result do
+initialization
+end
+for restart_index = 1 to num_restart do
+set num_particles = num_initial_particles
+generate random particles
+for iteration = 1 to num_iterations do
+foreach particle parameter do
+initialization
+end
+foreach particle do
+evaluate particle with PEKO algorithm
+store calculation result
+end
+if iteration < num_iterations then
+compute particle weights
+if resampling_enabled then
+resample particles based on weights
+else
+add random noise to particle parameters
+end
+if KLD_sampling_enabled then
+do
+compute bins across parameter ranges
+compute num_required_particle via KLD bound
+add new particles by noisy copies
+while num_particles < num_required_particle
+end
+end
+end
+foreach particle do
+sort calculation results
+store optimal structural parameters
+end
+end
+stop timer
+END
