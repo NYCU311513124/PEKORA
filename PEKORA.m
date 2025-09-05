@@ -25,7 +25,7 @@ if(meow==1)
     tokino = 2; % 是否要求中心頻率符合指定相位 : 1.是 2.否
     hoshimachi = 2; % 排序計算結果的優先順序 : 1.反射係數 2.相位變化 3.反射係數與相位差總和
 else
-    S1='S Parameter Table 27.csv'; % 匯入HFSS的S11
+    S1='S Parameter.csv'; % 匯入HFSS的S11
     kanata = readmatrix(S1,'Range','A2:A202'); % 讀取頻率範圍 (GHz)
     botan = readmatrix(S1,'Range','B2:B202'); % 讀取S11大小 (magnitude)
     lamy = readmatrix(S1,'Range','C2:C202'); % 讀取S11角度 (degree)
@@ -1056,4 +1056,5 @@ function [laplas,koyori,ina] = out2(suisei,s,laplas,koyori,ina,risu,reine,i,moon
         end
     end
 end
+
 
