@@ -16,43 +16,43 @@ PEKO2: For impedance matching structures, calculates reflection coefficients usi
 Parameter Settings
 PEKORA allows flexible design by configuring parameters at the beginning of the code.
 Basic Specifications
-•	Frequency range
-•	Input and load impedances
-•	Target reflection coefficient
-•	Center frequency
+• Frequency range
+• Input and load impedances
+• Target reflection coefficient
+• Center frequency
 Structural Parameters
-•	Characteristic impedance range (transmission lines and stubs)
-•	Electrical length range
+• Characteristic impedance range (transmission lines and stubs)
+• Electrical length range
 Computation Controls
-•	Circuit order
-•	Number of particles and distribution type (uniform / normal distribution)
-•	Number of iterations
-•	Resampling method (multinomial / residual / systematic / stratified)
+• Circuit order
+• Number of particles and distribution type (uniform / normal distribution)
+• Number of iterations
+• Resampling method (multinomial / residual / systematic / stratified)
 
 Core Functions
-•	initialize1, initialize2 : Initialize frequency points, target impedance, and phase specifications.
-•	PEKO1, PEKO2 : Core calculation functions. Based on the selected circuit structure (CRLH or impedance matching), compute the reflection coefficient and phase shift for each particle (parameter set).
-•	nonresampling1, nonresampling2 : Update particle states without resampling.
-•	resampling1, resampling2 : Perform particle resampling based on particle weights. Supports multiple resampling strategies.
-•	hololive1, hololive2 : Introduce random perturbations to particles, simulating parameter variations.
-•	KLD1, KLD2 : Execute KLD (Kullback-Leibler Divergence) sampling, dynamically adjusting the number of particles based on their distribution to ensure accuracy and efficiency.
-•	out1, out2 : Sort and save the best optimization results
+• initialize1, initialize2 : Initialize frequency points, target impedance, and phase specifications.
+• PEKO1, PEKO2 : Core calculation functions. Based on the selected circuit structure (CRLH or impedance matching), compute the reflection coefficient and phase shift for each particle (parameter set).
+• nonresampling1, nonresampling2 : Update particle states without resampling.
+• resampling1, resampling2 : Perform particle resampling based on particle weights. Supports multiple resampling strategies.
+• hololive1, hololive2 : Introduce random perturbations to particles, simulating parameter variations.
+• KLD1, KLD2 : Execute KLD (Kullback-Leibler Divergence) sampling, dynamically adjusting the number of particles based on their distribution to ensure accuracy and efficiency.
+• out1, out2 : Sort and save the best optimization results
 
 Output
-•	Optimized structural parameters (characteristic impedance, electrical length)
-•	Reflection coefficient
-•	Phase response curve
-•	Impedance matching ratio
+• Optimized structural parameters (characteristic impedance, electrical length)
+• Reflection coefficient
+• Phase response curve
+• Impedance matching ratio
 
 Usage
-1.	Open PEKORA.m in MATLAB.
-2.	Modify the parameter settings at the beginning of the script.
-3.	Run the program. The particle filter algorithm will execute, and computation time will be displayed in the MATLAB command window.
-4.	Optimized structural parameters and corresponding results (reflection coefficient / phase response) will be output.
+1. Open PEKORA.m in MATLAB.
+2. Modify the parameter settings at the beginning of the script.
+3. Run the program. The particle filter algorithm will execute, and computation time will be displayed in the MATLAB command window.
+4. Optimized structural parameters and corresponding results (reflection coefficient / phase response) will be output.
 
 System Requirements
-•	MATLAB
-•	(Optional) Simulated Exported S Parameters CSV file
+• MATLAB
+• (Optional) Simulated Exported S Parameters CSV file
 
 Notes
 This program is intended for research and academic use only.
