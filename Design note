@@ -1,5 +1,5 @@
 Program Function
-Partially Estimated Kernel Optimization and Random Adaptive (PEKORA) is an optimization tool based on the particle filter algorithm. It uses particle filtering to search for the optimal circuit parameter set for the design and analysis of microwave circuits. The code is mainly divided into several parts: basic specification settings, structural parameter settings, calculation control settings, and function definitions.
+Partially Estimated Kernel Optimization and Random Adaptive (PEKORA) is an optimization program based on the PEKO algorithm and particle filter algorithm. It uses particle filtering to search for the optimal circuit parameter set for the design and analysis of microwave circuits. The code is mainly divided into several parts: basic specification settings, structural parameter settings, calculation control settings, and function definitions.
 The framework supports two main design applications:
 1. CRLH (Composite Right/Left-Handed) Phase Shifter Design : Optimizes transmission line and stub parameters to achieve a specific phase response with low reflection coefficients.
 2. Impedance Matching Network Design : Optimizes circuit parameters to achieve maximum power transfer and minimal reflection coefficient across a target frequency range.
