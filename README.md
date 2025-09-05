@@ -1,5 +1,5 @@
 # PEKORA Algorithm Applied to Microwave Circuit Design 
-This program implements the Partially Estimated Kernel Optimization (PEKO) algorithm for optimizing microwave circuit designs. By combining the Particle Filter method with transmission line theory, it performs parameter optimization to meet requirements for reflection coefficient and phase response. It can be applied to CRLH phase shifters and impedance matching structures.
+This program implements the Partially Estimated Kernel Optimization (PEKO) algorithm for optimizing microwave circuit designs. By combining the particle filter method with transmission line theory, it performs parameter optimization to meet requirements for reflection coefficient and phase response. It can be applied to CRLH phase shifters and impedance matching structures.
 
 ## Core Algorithm Overview
 1. PEKO Algorithm (Partially Estimated Kernel Optimization) : The goal of this algorithm is to transform the load impedance in a circuit into the desired input impedance, thereby achieving impedance matching.
