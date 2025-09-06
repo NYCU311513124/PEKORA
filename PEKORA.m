@@ -158,8 +158,7 @@ for k = 1:shiori % 每次重新計算particle filter
             else % 阻抗匹配結構
                 [risu(g),reine(g)] = PEKO2(okayu,azki,g,moona,sora,hina,watame,towa,ui);
             end
-            reine(g) = reine(g) / length(watame); % 計算粒子達到阻抗匹配的比例
-            
+            reine(g) = reine(g) / length(watame); % 計算粒子達到阻抗匹配的比例 
         end
         
         if(h < iofi) % 完成最後一次迭代計算前
@@ -1056,5 +1055,4 @@ function [laplas,koyori,ina] = out2(suisei,s,laplas,koyori,ina,risu,reine,i,moon
         end
     end
 end
-
 
